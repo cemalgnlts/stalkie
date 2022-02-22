@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stalkie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- #region Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="assets/stalkie-logo.svg" alt="Logo" />
+          <img src="assets/stalkie-text.svg" alt="Logo Text" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-label="Stalkie mobile drawer">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">
+              <img src="assets/stalkie-text.svg" alt="Logo Text" />
+            </h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body justify-content-end">
+            <ul class="navbar-nav align-items-start align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Anasayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Hakkımızda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">İletişim</a>
+              </li>
+              <li class="nav-item dropdown me-4 my-lg-0 my-3 w-sm-100 rounded">
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="dropdown-language" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="/assets/img/flag-turkey.png" alt="Language TR" />
+                  <span class="align-middle mx-1">TR</span>
+                  <svg class="ms-auto" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M0.00195309 0.898488C0.111147 0.586503 0.351934 0.38659 0.564722 0.171533C0.797109 -0.061699 1.12189 -0.0526121 1.36548 0.171533C1.40187 0.204851 1.43267 0.241199 1.46627 0.274518C2.7794 1.69511 4.09532 3.1157 5.40845 4.53933C5.43925 4.57264 5.45885 4.61505 5.48404 4.65746C5.53724 4.60293 5.56524 4.57567 5.59324 4.54538C6.91476 3.11873 8.23909 1.68602 9.56342 0.253316C9.751 0.0503737 9.96379 -0.0374668 10.2242 0.0443158C10.4398 0.110953 10.9157 0.637996 10.9773 0.877286C11.0305 1.08023 10.9969 1.26802 10.8821 1.43765C10.8513 1.48308 10.8121 1.52549 10.7757 1.56789C9.17704 3.30047 7.57833 5.03002 5.97682 6.75957C5.74163 7.014 5.45325 7.07156 5.19846 6.90799C5.13406 6.86861 5.07807 6.81106 5.02487 6.75351C3.42336 5.02396 1.82465 3.29441 0.228741 1.55881C0.130746 1.45279 0.0775489 1.30437 0.00195307 1.17413C0.00195308 1.08629 0.00195308 0.992387 0.00195309 0.898488Z"
+                      fill="#304D73"
+                    />
+                  </svg>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-language">
+                  <li><a class="dropdown-item active" href="#" aria-current="true">Türkçe</a></li>
+                  <li><a class="dropdown-item" href="#">İngilizce</a></li>
+                  <li><a class="dropdown-item" href="#">Almanca</a></li>
+                  <li><a class="dropdown-item" href="#">Fransızca</a></li>
+                </ul>
+              </li>
+              <li class="w-sm-100">
+                <button class="btn btn-primary w-sm-100">
+                  <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_34_1727)">
+                      <path
+                        d="M10.4385 23C9.96626 23 9.49405 23 9.02183 23C8.37565 22.9935 7.95314 22.5684 7.94693 21.8883C7.9345 20.8746 7.94693 19.8675 7.94693 18.8538C7.94693 18.5203 8.06498 18.2391 8.29488 18.0037C9.75501 16.4734 11.2089 14.93 12.6753 13.3998C13.5513 12.4842 14.6138 12.1899 15.7944 12.5562C16.9687 12.9224 17.6956 13.7791 17.938 15.0478C18.1554 16.1922 17.8385 17.1928 17.0619 18.0233C16.0864 19.0631 15.0985 20.0898 14.1168 21.1231C13.6383 21.6267 13.1599 22.1237 12.6877 22.6272C12.4516 22.8823 12.172 23 11.8365 23C11.3643 22.9935 10.9045 23 10.4385 23ZM9.94141 20.8942C10.4323 20.8942 10.8796 20.9008 11.327 20.8877C11.4264 20.8877 11.5507 20.8288 11.6252 20.7569C12.2528 20.1095 12.8679 19.4555 13.483 18.8015C14.1975 18.0429 14.9183 17.2843 15.6328 16.5323C15.8938 16.2576 16.0367 15.9306 15.987 15.5448C15.9248 15.0674 15.6763 14.7273 15.2414 14.5769C14.8064 14.4265 14.415 14.5311 14.0919 14.8712C12.7498 16.2838 11.4015 17.6963 10.0595 19.1089C10.0098 19.1612 9.94762 19.2397 9.94141 19.3051C9.93519 19.8283 9.94141 20.3514 9.94141 20.8942Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M12.9176 5.23173C12.899 8.14842 10.6684 10.4962 7.90968 10.4569C5.07019 10.4177 2.89553 7.95223 2.98873 5.04208C3.07571 2.31503 5.18203 -0.0130855 8.02773 -6.19109e-06C10.7057 0.0130731 12.9363 2.40659 12.9176 5.23173ZM10.9169 5.23173C10.9294 3.53141 9.59349 2.10577 7.97181 2.09923C6.34392 2.09269 4.98942 3.48564 4.9832 5.18595C4.97078 6.93204 6.27557 8.34461 7.92832 8.36422C9.56864 8.3773 10.9045 6.97782 10.9169 5.23173Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M9.92913 12.5431C9.92913 13.2428 9.92913 13.9164 9.92913 14.6292C9.83593 14.6292 9.74894 14.6292 9.66195 14.6292C7.80417 14.6292 5.94017 14.6292 4.08239 14.6292C3.10689 14.6292 2.34265 15.2113 2.08791 16.1334C2.04442 16.2903 2.01335 16.4538 2.01335 16.6108C2.00714 17.9906 2.00714 19.3705 2.00714 20.7438C2.00714 20.7831 2.01335 20.8223 2.01956 20.8877C3.66609 20.8877 5.30641 20.8877 6.95294 20.8877C6.95294 21.594 6.95294 22.2741 6.95294 22.9869C6.85353 22.9869 6.77276 22.9869 6.69198 22.9869C4.84041 22.9869 2.98884 22.9738 1.13106 22.9935C0.478657 23.0065 -0.0121959 22.5226 0.00023077 21.8163C0.0250841 20.1029 0.0064441 18.3895 0.0126574 16.6762C0.0126574 14.4396 1.75239 12.5627 3.88356 12.5366C5.85318 12.5104 7.82281 12.53 9.79243 12.53C9.8235 12.53 9.86078 12.5366 9.92913 12.5431Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_34_1727">
+                        <rect width="18" height="23" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>Giriş Yap</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- #endregion -->
+
+    <!-- #region Head -->
+    <section id="head" class="mt-5">
+      <h2 class="text-center fw-bold mb-5">
+        Hmm, sanırım <span class="text-color-main">resim</span> yüklemek
+        <br />
+        istiyorsunuz?
+      </h2>
+
+      <div class="container">
+        <div class="upload-area bg-white max-w-md mx-auto">
+          <!-- Nav tabs -->
+          <ul class="nav nav-pills justify-content-center pt-4" id="upload-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="from-pc-tab" data-bs-toggle="tab" data-bs-target="#from-pc" type="button" role="tab" aria-controls="home" aria-selected="true">
+                Bilgisayardan Yükle
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="from-net-tab" data-bs-toggle="tab" data-bs-target="#from-net" type="button" role="tab" aria-controls="profile" aria-selected="false">
+                İnternetten Yükle
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="from-clipboard-tab" data-bs-toggle="tab" data-bs-target="#from-clipboard" type="button" role="tab" aria-controls="messages" aria-selected="false">
+                Kopyala Yapıştır
+              </button>
+            </li>
+          </ul>
+
+          <!-- Bilgisayardan Yükle İçerik -->
+          <div class="tab-content w-lg-75 mx-auto py-5">
+            <div class="tab-pane active" id="from-pc" role="tabpanel" aria-labelledby="from-pc-tab">
+              <div class="container upload-content d-flex flex-column align-items-center text-center">
+                <svg width="95" height="101" viewBox="0 0 95 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_34_1554)">
+                    <path
+                      d="M0.0282061 75.9749C0.0282061 54.8583 -0.0850915 33.7698 0.0848548 12.6531C0.113179 6.35468 5.15492 1.15284 11.358 0.196826C12.4626 0.028118 13.5389 0 14.6153 0C36.9349 0 59.2545 0 81.5741 0C88.0887 0 93.8386 4.97689 94.7733 11.3597C94.9149 12.2313 94.9432 13.103 94.9432 13.9747C94.9432 31.2673 94.9432 48.5599 94.9432 65.8243C87.7205 59.076 80.4695 52.3558 73.2467 45.6075C71.434 43.9204 69.6212 43.9204 67.8651 45.6637C64.1546 49.3472 60.4158 53.0306 56.7053 56.7703C56.1105 57.3889 55.7989 57.4452 55.1475 56.7984C50.219 51.8497 45.2339 46.9009 40.2488 41.9802C38.1812 39.9276 36.3967 39.8995 34.329 41.9521C23.2259 53.0306 12.0377 64.1091 0.877937 75.1876C0.623018 75.4688 0.31145 75.7219 0.0282061 75.9749ZM57.6117 43.7517C63.2199 43.7798 67.8368 39.2528 67.8368 33.7135C67.8651 28.1462 63.3049 23.5629 57.725 23.5629C52.1167 23.5348 47.4999 28.0618 47.4999 33.6011C47.4715 39.1684 52.0318 43.7517 57.6117 43.7517Z"
+                      fill="#DEEBF9"
+                    />
+                    <path
+                      d="M0.0282136 75.9749C0.311457 75.7219 0.594701 75.4688 0.877945 75.1876C12.0378 64.1091 23.2259 53.0306 34.3857 41.9521C36.4534 39.8995 38.2378 39.9276 40.3055 41.9802C45.2906 46.9009 50.2473 51.8215 55.2041 56.7984C55.8556 57.4452 56.1671 57.3889 56.762 56.7703C60.4441 53.0587 64.183 49.3753 67.9218 45.6637C69.6779 43.9204 71.4906 43.9204 73.3034 45.6075C80.5261 52.3558 87.7772 59.076 94.9999 65.8243C94.9999 72.9663 95.0282 80.1364 94.9999 87.2784C94.9999 95.0671 89.0234 100.972 81.1776 100.972C61.0389 100.972 40.9286 100.972 20.79 100.972C18.2691 100.972 15.7766 101 13.2557 100.972C6.14628 100.888 0.113187 94.8984 0.0282136 87.8408C-0.00011077 83.9042 0.0282136 79.9396 0.0282136 75.9749Z"
+                      fill="url(#paint0_linear_34_1554)"
+                    />
+                    <path
+                      d="M57.6117 43.7517C52.0318 43.7235 47.4716 39.1684 47.4999 33.601C47.5282 28.0618 52.1168 23.5348 57.725 23.5629C63.3049 23.591 67.8651 28.1461 67.8368 33.7135C67.8085 39.2528 63.2199 43.7798 57.6117 43.7517Z"
+                      fill="#6089C6"
+                    />
+                  </g>
+                  <defs>
+                    <linearGradient id="paint0_linear_34_1554" x1="155" y1="30" x2="-92.0001" y2="139.5" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#4078FF" />
+                      <stop offset="1" stop-color="#3570FF" />
+                    </linearGradient>
+                    <clipPath id="clip0_34_1554">
+                      <rect width="95" height="101" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <h4 class="mt-3">Dosyalardan seçin veya <span class="text-color-main">buraya sürükleyin</span></h4>
+                <h6 class="mt-1 text-color-secondary">Desteklenen formatlar; JPG,JPEG2000,PNG</h6>
+              </div>
+            </div>
+
+            <!-- İnternetten Yükle -->
+            <div class="tab-pane" id="from-net" role="tabpanel" aria-labelledby="from-net-tab">
+              <input class="form-control" name="url" type="text" placeholder="Url adresini buraya yapıştırın" aria-label="Url adresini buraya yapıştırın" />
+            </div>
+
+            <!-- Kopyala Yapıştır -->
+            <div class="tab-pane" id="from-clipboard" role="tabpanel" aria-labelledby="from-clipboard-tab">
+              <div class="container upload-content d-flex flex-column align-items-center text-center">
+                <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <rect width="90" height="90" fill="url(#pattern0)" />
+                  <defs>
+                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                      <use xlink:href="#image0_34_1959" transform="scale(0.0078125)" />
+                    </pattern>
+                    <image
+                      id="image0_34_1959"
+                      width="128"
+                      height="128"
+                      xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADsQAAA7EB9YPtSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAASjSURBVHic7d09aF1lHMfx73PPTXJzc2/SvNVUrYovS1uoNlocpLY4ONhBkA5KMZ2EIoo6Cw7i5qCDg4OTgy9IJ3XVSQRfBqHoUkxSRKFiNTSWe7n3Pk6hGpM0yXNynuec/++zZcg9f8iX/tLSmzgSdv4jf9Y5XnGewx6GY9/z3TJcvX7j40s/X17te/8JWf813rt7Kd5lu1eLfcBmnv/Qv+TgfTwPpPDF30h/4MfwLNDLfuDc0pnY9+xGkgG88Lkf8Y43Yt+xA+N4PmZh6V3OXEwy1s0kGcBghcNAM/Ydu/AczdZXLCzfE/uQ7UoyAOcZj31DgHnw35dlEpIMoAJKMwkKYG8lPwkKYO8lPQkKoBjJToICKFZyk6AAipfUJCiAOJKZBAUQV/RJUADxRZ0EBZCGaJOgANJS+CQogPQUOgkKIE2FTYICSNueT4ICSN+eToICKIc9mwQFUC65T4ICCOGiPHUe/DecW34yjxdTAAGG60OxHj2J9xdYWH499IUUQIDpqYmYj3fgX+XZpdMhL6IAArRbTfbPTFGrxdkCAJx7JuTT63ndYdW+iRbj7TE63S5+4At//kTTPXYx4PMVQA5qNcdoYyTKsxuNsHdNaQKMUwDGBU/A4qo/kA14E88p4EAONwXp9OFK98bHi9fgp99h9Spc/wuKX+m0BQVw6Q8/kQ34Gs8deR2Ut4GHoRHYNweNFvz5Gwz6sa9KR9AEDA3xYspf/PUaLZi5C4YbsS9JR1AANc+DeR1SlHodZu6E9lSsf8lNS1AAnvK+i7c9C5O3QS2LfUlcpv8WoEkwHgBoEswHsMbqJCiAf7E4CQpgHWuToAA2YWUSFMAWLEyCAriJqk+CAtim9iw8dD8MJ/UDXsIpgB24ZRZOPwr7J2Nfkh8FsEOtUXj8EThybzUmQQHsgnNw7BCcOl7+SVAAAW6fK/8kKIBAZZ8EBZCDMk+CAshRGSdBAeSsbJNQ+QBchK/C2iScPA7D0d4/uj2VD6AZ8b1PB+fgiRPQHot3w81UPoDZBrQiRtAegxMJ/9fZygdQA45OwWTE786nJ2C8Fe/5WzHx5tBGBsem4e8edAbgC357kHOwfBC+/LHY526HiQDWNOvxfhVZK9FvBis/AbI1BWCcAjBOARinAIxTAMYpAOMUgHEKwDgFYJwCME4BGKcAjFMAxikA4xSAcQrAOAVgnAIwTgEYpwCMUwDGKQDjFIBxCsA4BWCcAjBOARinAIxTAMYpAOMUgHEKwDgFYJwCME4BGKcASs45eiGfrwBKbiQj6IfPKYASa9TpTY7ydMhrKIASyjL8VJPFW5vMf3re/RLyWkE/S/vyiv8COBnyGnnr9OFKN/YV/9eu8/KRafdW7DvW058AxikA4xSAcQrAOAVgnAIwTgEYpwCMUwDGKQDjFIBxCsA4BWCcAjBOARinAIxTAMYpAOMUgHEKwDgFYJwCME4BGKcAjFMAxgUF4GAlr0Mqb8C12CdsJCiAgePbvA6pMgfU4LPYd2wkKIBOl7eBpZxuqazRjAuHZt2vse/YSFAA9027lV6Nh3F8gObgPxxQh+5YxjtHZ9xTse/ZzD+iDt/wOPtxrQAAAABJRU5ErkJggg=="
+                    />
+                  </defs>
+                </svg>
+                <h4 class="mt-3">Resmi bu alana yapıştırınız <span class="text-color-main">(ctrl+v)</span></h4>
+                <h6 class="mt-1 text-color-secondary">Desteklenen formatlar; ekran görüntüleri</h6>
+              </div>
+            </div>
+          </div>
+
+          <form class="row w-lg-75 pb-4 g-4 mx-auto">
+            <textarea name="description" rows="3" class="form-control col-12" placeholder="Lütfen açıklama giriniz..."></textarea>
+
+            <div class="col-12 col-sm-6 px-0 pe-sm-1">
+              <select name="expire" class="form-select">
+                <option value="unlimited">Sınırsız</option>
+                <option value="1week">1 Hafta</option>
+                <option value="1month">1 Ay</option>
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-6 px-0 ps-sm-1">
+              <input class="form-control col-6" name="password" type="text" placeholder="Şifreli Resim (İsteğe Bağlı)" aria-label="Search" />
+            </div>
+
+            <button class="btn btn-primary w-100 p-3 col-12 fs-5" type="submit">Yükle</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Why We -->
+    <section class="mt-5" id="why-we">
+      <h2 class="text-center fw-bold mb-5">Neden Bizi <span class="text-color-main">Tercih Etmelisiniz?</span></h2>
+      <div class="container">
+        <div class="g-4 row row-cols-1 row-cols-lg-4 row-cols-sm-2 text-center">
+          <div class="col">
+            <div class="card me-sm-0 mx-auto">
+              <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="39" cy="39" r="38" stroke="#304D73" stroke-width="2" />
+                <g clip-path="url(#clip0_87_212)">
+                  <path
+                    d="M64 28.9918C63.591 30.2908 63.1563 31.5772 62.76 32.8761C60.7402 39.4088 58.7332 45.954 56.7133 52.4867C56.3937 53.5334 55.7418 54 54.6296 54C44.5432 54 34.4441 54 24.3577 54C23.2839 54 22.6191 53.5334 22.2995 52.5245C19.909 44.7559 17.5184 36.9874 15.1279 29.2188C14.8722 28.3991 15 27.6424 15.6776 27.0749C16.3551 26.5074 17.1221 26.4948 17.9019 26.8732C21.1874 28.4622 24.4728 30.026 27.7582 31.615C28.0778 31.7663 28.2695 31.8042 28.538 31.4763C31.6572 27.8947 34.7892 24.3383 37.9213 20.7693C38.8545 19.7099 40.1328 19.7226 41.0916 20.8071C44.2492 24.4013 47.394 27.9829 50.5516 31.5772C50.6155 31.6528 50.6794 31.7159 50.7689 31.8168C51.8044 31.3123 52.8526 30.8205 53.8881 30.316C56.1764 29.2189 58.4775 28.1469 60.7402 26.9993C61.993 26.3687 63.2714 26.4191 63.9745 28.0208C64 28.3613 64 28.6766 64 28.9918ZM20.0624 32.1321C20.1135 32.3086 20.1263 32.3717 20.1519 32.4221C21.9288 38.2107 23.7185 43.9993 25.4955 49.7878C25.6105 50.1536 25.7639 50.2292 26.1219 50.2292C35.0449 50.2166 43.9807 50.2166 52.9038 50.2292C53.3129 50.2292 53.4407 50.0905 53.543 49.7374C55.0131 44.9199 56.496 40.1024 57.9789 35.2975C58.2985 34.276 58.6053 33.2418 58.9505 32.1447C58.7076 32.2456 58.5542 32.3212 58.4008 32.3969C56.0869 33.5067 53.7731 34.6291 51.4592 35.7389C50.2575 36.319 49.5033 36.1677 48.6212 35.1714C46.4352 32.687 44.262 30.2025 42.076 27.7181C41.2322 26.7597 40.3885 25.8012 39.5192 24.8175C39.3914 24.9562 39.2763 25.0697 39.1741 25.1832C36.2466 28.5126 33.3319 31.842 30.4044 35.1588C29.5351 36.1424 28.7681 36.3064 27.6176 35.7515C26.6844 35.3101 25.7639 34.8561 24.8307 34.4147C23.2583 33.6706 21.7115 32.9266 20.0624 32.1321Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_87_212">
+                    <rect width="49" height="34" fill="white" transform="translate(15 20)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Lorem Ipsum Dolar Sit Amet</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card ms-sm-0 mx-auto">
+              <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="39" cy="39" r="38" stroke="#304D73" stroke-width="2" />
+                <g clip-path="url(#clip0_87_212)">
+                  <path
+                    d="M64 28.9918C63.591 30.2908 63.1563 31.5772 62.76 32.8761C60.7402 39.4088 58.7332 45.954 56.7133 52.4867C56.3937 53.5334 55.7418 54 54.6296 54C44.5432 54 34.4441 54 24.3577 54C23.2839 54 22.6191 53.5334 22.2995 52.5245C19.909 44.7559 17.5184 36.9874 15.1279 29.2188C14.8722 28.3991 15 27.6424 15.6776 27.0749C16.3551 26.5074 17.1221 26.4948 17.9019 26.8732C21.1874 28.4622 24.4728 30.026 27.7582 31.615C28.0778 31.7663 28.2695 31.8042 28.538 31.4763C31.6572 27.8947 34.7892 24.3383 37.9213 20.7693C38.8545 19.7099 40.1328 19.7226 41.0916 20.8071C44.2492 24.4013 47.394 27.9829 50.5516 31.5772C50.6155 31.6528 50.6794 31.7159 50.7689 31.8168C51.8044 31.3123 52.8526 30.8205 53.8881 30.316C56.1764 29.2189 58.4775 28.1469 60.7402 26.9993C61.993 26.3687 63.2714 26.4191 63.9745 28.0208C64 28.3613 64 28.6766 64 28.9918ZM20.0624 32.1321C20.1135 32.3086 20.1263 32.3717 20.1519 32.4221C21.9288 38.2107 23.7185 43.9993 25.4955 49.7878C25.6105 50.1536 25.7639 50.2292 26.1219 50.2292C35.0449 50.2166 43.9807 50.2166 52.9038 50.2292C53.3129 50.2292 53.4407 50.0905 53.543 49.7374C55.0131 44.9199 56.496 40.1024 57.9789 35.2975C58.2985 34.276 58.6053 33.2418 58.9505 32.1447C58.7076 32.2456 58.5542 32.3212 58.4008 32.3969C56.0869 33.5067 53.7731 34.6291 51.4592 35.7389C50.2575 36.319 49.5033 36.1677 48.6212 35.1714C46.4352 32.687 44.262 30.2025 42.076 27.7181C41.2322 26.7597 40.3885 25.8012 39.5192 24.8175C39.3914 24.9562 39.2763 25.0697 39.1741 25.1832C36.2466 28.5126 33.3319 31.842 30.4044 35.1588C29.5351 36.1424 28.7681 36.3064 27.6176 35.7515C26.6844 35.3101 25.7639 34.8561 24.8307 34.4147C23.2583 33.6706 21.7115 32.9266 20.0624 32.1321Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_87_212">
+                    <rect width="49" height="34" fill="white" transform="translate(15 20)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Lorem Ipsum Dolar Sit Amet</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card me-sm-0 mx-auto">
+              <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="39" cy="39" r="38" stroke="#304D73" stroke-width="2" />
+                <g clip-path="url(#clip0_87_212)">
+                  <path
+                    d="M64 28.9918C63.591 30.2908 63.1563 31.5772 62.76 32.8761C60.7402 39.4088 58.7332 45.954 56.7133 52.4867C56.3937 53.5334 55.7418 54 54.6296 54C44.5432 54 34.4441 54 24.3577 54C23.2839 54 22.6191 53.5334 22.2995 52.5245C19.909 44.7559 17.5184 36.9874 15.1279 29.2188C14.8722 28.3991 15 27.6424 15.6776 27.0749C16.3551 26.5074 17.1221 26.4948 17.9019 26.8732C21.1874 28.4622 24.4728 30.026 27.7582 31.615C28.0778 31.7663 28.2695 31.8042 28.538 31.4763C31.6572 27.8947 34.7892 24.3383 37.9213 20.7693C38.8545 19.7099 40.1328 19.7226 41.0916 20.8071C44.2492 24.4013 47.394 27.9829 50.5516 31.5772C50.6155 31.6528 50.6794 31.7159 50.7689 31.8168C51.8044 31.3123 52.8526 30.8205 53.8881 30.316C56.1764 29.2189 58.4775 28.1469 60.7402 26.9993C61.993 26.3687 63.2714 26.4191 63.9745 28.0208C64 28.3613 64 28.6766 64 28.9918ZM20.0624 32.1321C20.1135 32.3086 20.1263 32.3717 20.1519 32.4221C21.9288 38.2107 23.7185 43.9993 25.4955 49.7878C25.6105 50.1536 25.7639 50.2292 26.1219 50.2292C35.0449 50.2166 43.9807 50.2166 52.9038 50.2292C53.3129 50.2292 53.4407 50.0905 53.543 49.7374C55.0131 44.9199 56.496 40.1024 57.9789 35.2975C58.2985 34.276 58.6053 33.2418 58.9505 32.1447C58.7076 32.2456 58.5542 32.3212 58.4008 32.3969C56.0869 33.5067 53.7731 34.6291 51.4592 35.7389C50.2575 36.319 49.5033 36.1677 48.6212 35.1714C46.4352 32.687 44.262 30.2025 42.076 27.7181C41.2322 26.7597 40.3885 25.8012 39.5192 24.8175C39.3914 24.9562 39.2763 25.0697 39.1741 25.1832C36.2466 28.5126 33.3319 31.842 30.4044 35.1588C29.5351 36.1424 28.7681 36.3064 27.6176 35.7515C26.6844 35.3101 25.7639 34.8561 24.8307 34.4147C23.2583 33.6706 21.7115 32.9266 20.0624 32.1321Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_87_212">
+                    <rect width="49" height="34" fill="white" transform="translate(15 20)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Lorem Ipsum Dolar Sit Amet</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card ms-sm-0 mx-auto">
+              <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="39" cy="39" r="38" stroke="#304D73" stroke-width="2" />
+                <g clip-path="url(#clip0_87_212)">
+                  <path
+                    d="M64 28.9918C63.591 30.2908 63.1563 31.5772 62.76 32.8761C60.7402 39.4088 58.7332 45.954 56.7133 52.4867C56.3937 53.5334 55.7418 54 54.6296 54C44.5432 54 34.4441 54 24.3577 54C23.2839 54 22.6191 53.5334 22.2995 52.5245C19.909 44.7559 17.5184 36.9874 15.1279 29.2188C14.8722 28.3991 15 27.6424 15.6776 27.0749C16.3551 26.5074 17.1221 26.4948 17.9019 26.8732C21.1874 28.4622 24.4728 30.026 27.7582 31.615C28.0778 31.7663 28.2695 31.8042 28.538 31.4763C31.6572 27.8947 34.7892 24.3383 37.9213 20.7693C38.8545 19.7099 40.1328 19.7226 41.0916 20.8071C44.2492 24.4013 47.394 27.9829 50.5516 31.5772C50.6155 31.6528 50.6794 31.7159 50.7689 31.8168C51.8044 31.3123 52.8526 30.8205 53.8881 30.316C56.1764 29.2189 58.4775 28.1469 60.7402 26.9993C61.993 26.3687 63.2714 26.4191 63.9745 28.0208C64 28.3613 64 28.6766 64 28.9918ZM20.0624 32.1321C20.1135 32.3086 20.1263 32.3717 20.1519 32.4221C21.9288 38.2107 23.7185 43.9993 25.4955 49.7878C25.6105 50.1536 25.7639 50.2292 26.1219 50.2292C35.0449 50.2166 43.9807 50.2166 52.9038 50.2292C53.3129 50.2292 53.4407 50.0905 53.543 49.7374C55.0131 44.9199 56.496 40.1024 57.9789 35.2975C58.2985 34.276 58.6053 33.2418 58.9505 32.1447C58.7076 32.2456 58.5542 32.3212 58.4008 32.3969C56.0869 33.5067 53.7731 34.6291 51.4592 35.7389C50.2575 36.319 49.5033 36.1677 48.6212 35.1714C46.4352 32.687 44.262 30.2025 42.076 27.7181C41.2322 26.7597 40.3885 25.8012 39.5192 24.8175C39.3914 24.9562 39.2763 25.0697 39.1741 25.1832C36.2466 28.5126 33.3319 31.842 30.4044 35.1588C29.5351 36.1424 28.7681 36.3064 27.6176 35.7515C26.6844 35.3101 25.7639 34.8561 24.8307 34.4147C23.2583 33.6706 21.7115 32.9266 20.0624 32.1321Z"
+                    fill="currentColor"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_87_212">
+                    <rect width="49" height="34" fill="white" transform="translate(15 20)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Lorem Ipsum Dolar Sit Amet</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region News -->
+    <section class="mt-5" id="news">
+      <div class="container">
+        <h2 class="fw-bold mx-auto mb-5">Yeni <span class="text-color-main">Haberler</span></h2>
+        <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 g-4">
+          <div class="col">
+            <div class="card me-sm-0 mx-auto">
+              <img src="assets/img/news-placeholder.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Lorem Ipsum Dolar Sit Amett</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.Lorem ip...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card ms-sm-0 mx-auto">
+              <img src="assets/img/news-placeholder.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Lorem Ipsum Dolar Sit Amett</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.Lorem ip...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card me-sm-0 mx-auto">
+              <img src="assets/img/news-placeholder.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Lorem Ipsum Dolar Sit Amett</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.Lorem ip...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card ms-sm-0 mx-auto">
+              <img src="assets/img/news-placeholder.png" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title">Lorem Ipsum Dolar Sit Amett</h5>
+                <p class="card-text">Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.Lorem ip...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Footer -->
+    <footer class="mt-5">
+      <div class="container-lg mx-auto row p-5">
+        <div class="col text-center order-last order-md-first">
+          <img src="assets/stalkie-logo-white.svg" alt="Stalkie Logo" />
+        </div>
+        <div class="col">
+          <h6>Bağlantılar</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h6>Kurumsal</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Kullanıcı Sözleşmesi</a></li>
+            <li><a href="#">Gizlilik Politikası</a></li>
+            <li><a href="#">Kullanım Şartları</a></li>
+            <li><a href="#">Çerez Kullanımı</a></li>
+            <li><a href="#">S.S.S</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h6>İletişim</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Adres Satırı adres satırı 52/A İstanbul</a></li>
+            <li><a href="mailto:denem@resim.com">denem@resim.com</a></li>
+            <li><a href="tel:+908508505050">0850 850 50 50</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="m-0 pb-3 text-center">siteadresi.com 5651 Sayılı Kanun kapsamında <span style="color: red">Yer Sağlayıcı</span> Statüsündedir.</p>
+    </footer>
+    <!-- #endregion -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

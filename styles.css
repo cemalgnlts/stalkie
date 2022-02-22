@@ -1,0 +1,565 @@
+:root {
+  --bg-color: #f2f4ff;
+  --secondary-bg-color: #e7eaf8;
+  --main-color: #1056ff;
+  --primary-text: #304d73;
+  --secondary-text: #91a0b5;
+  --btn-bg: #007aff;
+}
+
+/* #region Font Family */
+
+/* Open Sauce One */
+@font-face {
+  font-family: "Open Sauce One";
+  font-weight: 300;
+  src: url("assets/fonts/OpenSauceOne/OpenSauceOne-Light.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce One";
+  font-weight: 400;
+  src: url("assets/fonts/OpenSauceOne/OpenSauceOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce One";
+  font-weight: 500;
+  src: url("assets/fonts/OpenSauceOne/OpenSauceOne-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce One";
+  font-weight: 600;
+  src: url("assets/fonts/OpenSauceOne/OpenSauceOne-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce One";
+  font-weight: 700;
+  src: url("assets/fonts/OpenSauceOne/OpenSauceOne-Medium.ttf");
+}
+
+/* Open Sauce Sans */
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 300;
+  src: url("assets/fonts/OpenSauceSans/OpenSauceSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 400;
+  src: url("assets/fonts/OpenSauceSans/OpenSauceSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 500;
+  src: url("assets/fonts/OpenSauceSans/OpenSauceSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 600;
+  src: url("assets/fonts/OpenSauceSans/OpenSauceSans-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Open Sauce Sans";
+  font-weight: 700;
+  src: url("assets/fonts/OpenSauceSans/OpenSauceSans-Bold.ttf");
+}
+/* #endregion */
+
+body {
+  background-color: var(--bg-color);
+}
+
+.text-color-main {
+  color: var(--main-color);
+}
+
+.text-color-secondary {
+  color: var(--secondary-text);
+}
+
+.btn-primary {
+  background-color: var(--btn-bg) !important;
+}
+
+section h2 {
+  font-family: "Open Sauce Sans", sans-serif;
+  color: var(--primary-text) !important;
+}
+
+/* #region Navbar */
+.navbar-brand span {
+  color: var(--main-color);
+}
+
+.navbar-nav button {
+  font-family: "Open Sauce One";
+  border-radius: 16px !important;
+  padding: 10px 20px;
+}
+
+.navbar-nav button:hover {
+  border-color: none !important;
+}
+
+.navbar-nav button span {
+  margin-left: 8px;
+}
+
+.navbar-nav li {
+  font-family: "Open Sauce One";
+  margin-right: 8px;
+}
+
+nav .nav-link:not(.dropdown-toggle) {
+  opacity: 0.5;
+}
+
+nav .nav-link.active {
+  position: relative;
+  font-weight: bold;
+  opacity: 1;
+  color: var(--primary-text) !important;
+}
+
+nav .nav-link.active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  margin-top: 6px;
+  width: 50%;
+  height: 4px;
+  background-color: var(--btn-bg);
+}
+
+nav #dropdown-language {
+  background-color: #f2f4ff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  min-width: 7.3em;
+}
+
+nav .dropdown-toggle {
+  border-bottom: solid 2px #f2f4ff;
+  transition: border-color 0s;
+  -webkit-transition: border-color 0s;
+  -moz-transition: border-color 0s;
+}
+
+nav .dropdown-toggle::after {
+  display: none;
+}
+
+nav .dropdown-toggle.show {
+  border-bottom-color: var(--btn-bg);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+nav .dropdown-menu {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  border-radius: 9px;
+}
+
+nav .dropdown-item {
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--secondary-text);
+  border-radius: 4px;
+  margin-left: 4px;
+  margin-bottom: 2px;
+}
+
+nav .dropdown-item:hover {
+  color: var(--primary-text);
+}
+
+nav .dropdown-item.active {
+  background: rgba(145, 160, 181, 0.25);
+  color: var(--primary-text);
+}
+
+nav #dropdown-language img {
+  width: 32px;
+  height: 32px;
+}
+/* #endregion */
+
+/* #region Head Section */
+#head {
+  font-family: "Open Sauce Sans", sans-serif;
+}
+
+#head .upload-area {
+  box-shadow: -24px 35px 70px 0px rgba(145, 160, 181, 0.08);
+  border-radius: 30px;
+}
+
+#head .upload-content {
+  background: rgba(70, 154, 255, 0.15);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23469AFFFF' stroke-width='5' stroke-dasharray='15%2c 15' stroke-dashoffset='9' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 30px;
+}
+
+#from-pc .upload-content {
+  cursor: pointer;
+}
+
+#head .upload-content {
+  padding: 5rem 0;
+}
+
+#head .upload-content h4 {
+  color: #304d73;
+}
+
+#from-net input {
+  background: rgba(70, 154, 255, 0.15);
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%23469AFFFF' stroke-width='5' stroke-dasharray='15%2c 15' stroke-dashoffset='10' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 12px;
+  height: 61px;
+  border: none;
+  font-weight: 700;
+  color: #429aff;
+}
+
+#from-net input::placeholder {
+  color: #429aff;
+}
+
+#head .nav-item button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 17px !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--secondary-text) !important;
+}
+
+#head .nav-item button.active {
+  background: #469aff1a !important;
+  color: #469aff !important;
+}
+
+#head form input,
+#head form textarea,
+#head form select {
+  border-radius: 15px;
+  border-width: 2px;
+  font-size: 0.8rem;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  resize: none;
+}
+
+#head form select[value="Sınırsız"] {
+  color: var(--secondary-text);
+}
+
+#head form input::placeholder,
+#head form textarea::placeholder {
+  color: var(--secondary-text);
+}
+
+#head form button {
+  border-radius: 12px !important;
+}
+/* #endregion */
+
+/* #region Why We Section */
+#why-we {
+  font-family: "Open Sauce One", sans-serif;
+}
+
+#why-we .card {
+  width: 220px !important;
+  height: 347px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--primary-text);
+
+  transition-property: background-color, color;
+  transition: 200ms ease;
+  -webkit-transition-property: background-color, color;
+  -webkit-transition: 200ms ease;
+  -moz-transition-property: background-color, color;
+  -moz-transition: 200ms ease;
+}
+
+#why-we .card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 226px;
+  height: 226px;
+  background-color: #fff;
+  border-radius: 100%;
+  left: 90%;
+  top: 90%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+#why-we .card::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 226px;
+  height: 226px;
+  background-color: #fff;
+  border-radius: 100%;
+  left: 100%;
+  top: 100%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+#why-we .card:hover {
+  background-color: var(--btn-bg);
+  color: #fff;
+}
+
+#why-we .card:hover::after,
+#why-we .card:hover::before {
+  opacity: 0.1;
+}
+
+#why-we .card:hover circle {
+  stroke: #59a9ff;
+}
+
+#why-we .card-title {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+#why-we .card-text {
+  font-size: 0.9rem;
+}
+
+#why-we .card-body {
+  padding: 0.5rem 0.5rem;
+}
+
+#why-we .card svg {
+  margin: 2rem auto 0.5rem auto;
+}
+/* #endregion */
+
+/* #region News Section*/
+#news {
+  font-family: "Open Sauce One", sans-serif;
+}
+
+#news h2 {
+  position: relative;
+  padding-left: 10px;
+}
+
+#news h2::before {
+  content: "";
+  position: absolute;
+  height: 1.3ch;
+  left: 0;
+  top: 50%;
+  border-left: solid 4px #ccd2e3;
+  transform: translateY(-50%);
+}
+
+#news .card {
+  width: 220px;
+  height: 100%;
+  background: var(--secondary-bg-color);
+  border-color: transparent;
+  border-radius: 10px !important;
+}
+
+#news .card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#news .card-title {
+  font-size: 0.9rem;
+  color: var(--primary-text);
+}
+
+#news .card-body {
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+}
+
+/* #endregion */
+
+/* #region Footer */
+footer {
+  font-family: "Open Sauce One", sans-serif;
+  background-color: var(--secondary-bg-color);
+}
+
+footer .col:first-child img {
+  width: 110px;
+  height: auto;
+}
+
+footer li {
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+footer li:last-child {
+  margin-bottom: 0;
+}
+
+footer h6 {
+  letter-spacing: 1px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: var(--primary-text);
+}
+
+footer p {
+  font-size: 12px;
+  color: var(--primary-text);
+}
+
+footer a {
+  text-decoration: none !important;
+  color: var(--secondary-text);
+  transition: color 200ms ease;
+}
+
+footer a:hover {
+  color: var(--primary-text);
+}
+/* #endregion */
+
+/* #region Responisve */
+.max-w-sm {
+  width: 576px;
+}
+
+.max-w-md {
+  width: 768px;
+}
+
+.w-lg-75 {
+  width: 75%;
+}
+
+.w-sm-100 {
+  width: auto;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .max-w-sm {
+    width: 100%;
+  }
+
+  .w-sm-100 {
+    width: 100%;
+  }
+
+  .max-w-md {
+    width: 100%;
+  }
+
+  .w-lg-75 {
+    width: 90%;
+  }
+
+  nav .dropdown-item {
+    font-size: 1rem;
+  }
+
+  #news h2 {
+    width: 218px !important;
+  }
+}
+
+/* `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 768px) {
+  .max-w-md {
+    width: 100%;
+  }
+
+  footer .col:first-child img {
+    margin-top: 20px;
+    width: 90px;
+  }
+
+  #news h2 {
+    width: 460px; /* ( 218px {card width} + 12px ) * 2 {card} */
+  }
+}
+
+/* `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
+  .max-w-md {
+    width: 100%;
+  }
+
+  #news h2 {
+    width: 460px; /* ( 218px {card width} + 12px ) * 2 {card} */
+  }
+}
+
+/* `xl` applies to large devices (desktops, less than 1200px) */
+@media (min-width: 1200px) {
+  #why-we .row {
+    justify-content: center;
+  }
+
+  #why-we .col {
+    width: 220px;
+    height: 347px !important;
+    margin-right: 20px;
+  }
+
+  #news .row {
+    justify-content: center;
+  }
+
+  #news .col {
+    width: 220px;
+    margin-right: 20px;
+  }
+
+  #why-we .col:last-child,
+  #news .col:last-child {
+    margin-right: 0;
+  }
+
+  textarea,
+  input,
+  select {
+    font-size: 1rem !important;
+  }
+
+  #news h2 {
+    width: 920px; /* ( 218px {card width} + 12px ) * 4 {card} */
+  }
+}
+
+/* `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1400px) {
+}
+/* #endregion */
